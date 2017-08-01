@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Planta M</title>
+		<link rel="stylesheet" media="screen" href="css/style.css">
+		<link rel="stylesheet" media="screen" href="css/style_links.css">
+		<script src="./javascript/indexeddb.js"></script>
+		<script src="./javascript/cbline.js"></script>
+	</head> 
+	<body onload="load_form();">
+		<header>
+			<div class="header">
+				<img class= "img_libbey" src="css/images/libbey.png">
+			</div>
+		</header>
+		<div class="navbar"> 
+			<ol>
+				<li>
+					<a href="formulario.html" class="class_a_href">Formulario</a>
+				</li>
+				<li>
+					<a href="database.html" class="class_a_href">Base de datos</a>
+				</li>
+			</ol>
+		</div>
+		<div class="section">
+			<form class="eficiencias_form" onsubmit="return validation_efi_form(this)">
+				<ul>
+					<li>
+						 <h1>Eficiencias</h1>
+						 <span class="required_notification">* Denotes Required Field</span>
+					</li>
+					<li>
+						<label>Hora:</label>
+						<input type="text" id="hour_register" required/>
+					</li>
+					<li>
+						<label>Planta:</label>
+						<select id="horno" onchange= "cargarlinea(this.value);" required/>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">Electricos</option>
+						</select>
+					</li>
+					<li>
+						<label>Linea:</label>
+						<!-- <input type="text" id="Linea" placeholder="Numero de la linea" required/> -->
+						<select id="linea" pattern=".{2,3}" required/>
+							<option value="0">Seleccionar una linea</option>
+						</select>
+						<!-- 
+						</input>
+						<span class="form_hint">Ejemplo: 10</span> 
+						-->
+						
+					</li>
+					<li>
+						<label>Molde:</label>
+						<input type="text" id="molde" placeholder="Molde con calidad" onblur="aMayusculas(this.value,this.id)"
+							pattern=".{4,}" maxlength="6" required/>
+						<span class="form_hint">Molde con calidad. Ej:"4999LB"</span> 
+					</li>
+					<li>
+						<label>Vel_Real:</label>
+						<input type="number" id="vel_real" placeholder="Vel por hora"  
+							min="0" maxlength= "4" step=".01" required/> 
+						<span class="form_hint">Piezas/Hora</span>
+					</li>
+					<li>
+						<label>Empacado:</label>
+						<input type="number" id="empacado" placeholder="Empacado por hora" required/>
+						<span class="form_hint">Piezas</span> 
+					</li>
+					<li>
+						<label>Rechazo:</label>
+						<input type="number" id="rechazo" placeholder="Piezas rechazadas por hora" required/>
+						<span class="form_hint">Piezas</span> 
+					</li>
+					<li>
+						<label>Message:</label>
+						<textarea id="message" cols="40" rows="6" ></textarea>
+					</li>
+					<li>
+						<button class="submit" type="submit">Submit Form</button>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</body>
+</html>
