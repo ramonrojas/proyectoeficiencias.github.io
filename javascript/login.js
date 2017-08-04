@@ -10,8 +10,6 @@ function login_user(p){
 		alert ("Jalo");
 	}
 	
-	
-	
 } 
 	//if (usuario=="USUARIO1" && password=="CONTRASEÑA1") { 
 		//window.location="TU_PAGINA_WEB.HTML"; 

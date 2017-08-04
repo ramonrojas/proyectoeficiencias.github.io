@@ -185,7 +185,7 @@ function date_parameters() {
 	}
 	
 	hour_efi = hour_efi + ":00:00";
-	date_register = date_register +"/" +month +"/" +fecha.getFullYear();
+	date_register = fecha.getFullYear() +"-"+month+"-"+date_register;
 	
 	setTimeout("date_parameters()",1000);
 	
